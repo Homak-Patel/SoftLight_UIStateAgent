@@ -13,9 +13,7 @@ services:
     environment:
       - ENV_FILE=/app/.env
     env_file:
-      - ./.env.backend
-    depends_on:
-      - redis
+      - ./.env
     networks:
       - agent-b-network
 
@@ -31,7 +29,7 @@ services:
     environment:
       - NODE_ENV=development
     env_file:
-      - ./.env.frontend
+      - ./.env
     depends_on:
       - backend
     networks:
@@ -49,22 +47,9 @@ services:
     environment:
       - ENV_FILE=/app/.env
     env_file:
-      - ./.env.mcp
+      - ./.env
     networks:
       - agent-b-network
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis-data:/data
-    networks:
-      - agent-b-network
-
-volumes:
-  redis-data:
-    driver: local
 
 networks:
   agent-b-network:
