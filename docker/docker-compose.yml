@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/screenshots:/app/data/screenshots
+      - ./data/logs:/app/data/logs
+    environment:
+      - ENV_FILE=/app/.env
+    env_file:
+      - ./.env.backend
+    depends_on:
+      - redis
+    networks:
+      - agent-b-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - ./.env.frontend
+    depends_on:
+      - backend
+    networks:
+      - agent-b-network
+
+  mcp:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.mcp
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./mcp:/app
+      - ./data:/app/data
+    environment:
+      - ENV_FILE=/app/.env
+    env_file:
+      - ./.env.mcp
+    networks:
+      - agent-b-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - agent-b-network
+
+volumes:
+  redis-data:
+    driver: local
+
+networks:
+  agent-b-network:
+    driver: bridge
