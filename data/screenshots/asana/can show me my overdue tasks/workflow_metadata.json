@@ -1,0 +1,133 @@
+{
+  "task_query": "can show me my overdue tasks",
+  "app_name": "asana",
+  "app_url": "https://app.asana.com/1/1211810359682640/home",
+  "task_name": "can show me my overdue tasks",
+  "completed": true,
+  "error": null,
+  "total_steps": 1,
+  "steps_completed": 1,
+  "screenshots": [
+    "./data/screenshots/asana/can show me my overdue tasks/step_000.png",
+    "./data/screenshots/asana/can show me my overdue tasks/step_001.png"
+  ],
+  "step_descriptions": [
+    "Start: Open the application",
+    "Click on 'My tasks'",
+    "Click on 'My tasks'",
+    "Click on 'My tasks'"
+  ],
+  "execution_time": 23.12418508529663,
+  "detected_modals": 0,
+  "form_interactions": 0,
+  "ui_states_captured": 3,
+  "execution_log": [
+    {
+      "timestamp": 1762441024.028737,
+      "step": 0,
+      "event": "ui_state_capture",
+      "details": {
+        "context": "initial",
+        "has_modals": false,
+        "has_forms": false,
+        "url": "https://app.asana.com/1/1211810359682640/home"
+      },
+      "url": "https://app.asana.com/1/1211810359682640/home",
+      "success": true
+    },
+    {
+      "timestamp": 1762441024.88525,
+      "step": 0,
+      "event": "screenshot_captured",
+      "details": {
+        "path": "./data/screenshots/asana/can show me my overdue tasks/step_000.png",
+        "description": "Start: Open the application",
+        "action_type": null,
+        "action_success": true,
+        "step": 0,
+        "step_index": 0
+      },
+      "url": "",
+      "success": true
+    },
+    {
+      "timestamp": 1762441042.654942,
+      "step": 0,
+      "event": "ui_state_capture",
+      "details": {
+        "context": "post_click_Click on 'My tasks' in the sidebar to navigate to the tasks page where overdue tasks can be viewed",
+        "has_modals": false,
+        "has_forms": false,
+        "url": "https://app.asana.com/1/1211810359682640/project/1211810359682691/list/1211810359682708"
+      },
+      "url": "https://app.asana.com/1/1211810359682640/project/1211810359682691/list/1211810359682708",
+      "success": true
+    },
+    {
+      "timestamp": 1762441043.21586,
+      "step": 0,
+      "event": "step_executed_click",
+      "details": {
+        "selector": "a[aria-label='My tasks']",
+        "description": "Click on 'My tasks' in the sidebar to navigate to the tasks page where overdue tasks can be viewed",
+        "success": true
+      },
+      "url": "",
+      "success": true
+    },
+    {
+      "timestamp": 1762441045.1869729,
+      "step": 1,
+      "event": "screenshot_captured",
+      "details": {
+        "path": "./data/screenshots/asana/can show me my overdue tasks/step_001.png",
+        "description": "Click on 'My tasks'",
+        "action_type": "click",
+        "action_success": true,
+        "step": 1,
+        "step_index": 1
+      },
+      "url": "",
+      "success": true
+    },
+    {
+      "timestamp": 1762441046.3137128,
+      "step": 1,
+      "event": "screenshot_skipped",
+      "details": {
+        "reason": "low_reward",
+        "step": 1,
+        "description": "Click on 'My tasks'",
+        "action_type": "click"
+      },
+      "url": "",
+      "success": true
+    },
+    {
+      "timestamp": 1762441046.446545,
+      "step": 1,
+      "event": "ui_state_capture",
+      "details": {
+        "context": "final",
+        "has_modals": false,
+        "has_forms": false,
+        "url": "https://app.asana.com/1/1211810359682640/project/1211810359682691/list/1211810359682708"
+      },
+      "url": "https://app.asana.com/1/1211810359682640/project/1211810359682691/list/1211810359682708",
+      "success": true
+    },
+    {
+      "timestamp": 1762441047.1529222,
+      "step": 1,
+      "event": "screenshot_skipped",
+      "details": {
+        "reason": "low_reward",
+        "step": 1,
+        "description": "Click on 'My tasks'",
+        "action_type": "click"
+      },
+      "url": "",
+      "success": true
+    }
+  ]
+}
